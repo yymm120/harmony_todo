@@ -3,6 +3,22 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "background_primary",
+      "value": "#f1f1f1"
+    },
+    {
+      "name": "foreground_primary",
+      "value": "#1f1f1f"
+    },
+    {
+      "name": "background_second",
+      "value": "#d9d9d9"
+    },
+    {
+      "name": "foreground_second",
+      "value": "#2f2f2f"
     }
   ]
 }

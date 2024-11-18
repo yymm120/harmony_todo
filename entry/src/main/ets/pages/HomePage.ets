@@ -1,7 +1,4 @@
-import { Theme, ThemeControl } from '@kit.ArkUI'
-import { gAppTheme } from '../theme/dark'
 
-ThemeControl.setDefaultTheme(gAppTheme)
 
 class A {
   text: string = ''
@@ -36,13 +33,7 @@ const data: ItemCardProps[] = [
 struct HomePage {
   @State TooTmp: ToolbarItem = {'value': "func", 'icon': "./image/ic_public_highlights.svg", 'action': ()=> {}}
 
-  @State menuItemColor: ResourceColor = $r('sys.color.background_primary')
-
-  onWillApplyTheme(theme: Theme) {
-    console.log(`sys : ${$r("sys.color.background_primary").toString()}`);
-    this.menuItemColor = theme.colors.backgroundPrimary;
-    console.log(`custom: ${this.menuItemColor.toString()}`)
-  }
+  // @State colorMode =
 
   @Builder MenuForHeader() {
     Row({ space: 12 }) {
@@ -67,11 +58,17 @@ struct HomePage {
       .alignItems(HorizontalAlign.Start)
       .padding({top: 16, left: 8})
       .backgroundColor(Color.White)
-      Text("Left 20days").fontSize(12).alignRules({
+      Text("Left 20days")
+        .fontSize(12)
+        .alignRules({
         right: { anchor: "__container__", align: HorizontalAlign.End },
+          left: { anchor: "__container__", align: HorizontalAlign.Start},
+          top: { anchor: "__container__", align: VerticalAlign.Top },
         bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
-        bias: { horizontal: 8, vertical: 8 },
+        bias: { horizontal: 0.94, vertical: 0.86 },
       })
+        .width(72)
+        .height(16)
       Row() {
         Column().width("30%").backgroundColor(Color.Orange).height(8).opacity(0.5)
         Column().width("70%").backgroundColor(Color.Gray).height(8).opacity(0.5)
@@ -110,29 +107,14 @@ struct HomePage {
          .width("100%")
          .border({
            radius: 16,
-           // width: 1,
          })
        }, (item: ItemCardProps) => item.key)
        }
+       .width("100%")
+       .height("80%")
        .listDirection(Axis.Vertical)
        .padding({ left: 16, right: 16 })
-       // .height("80%")
-       // .borderWidth(1)
-       // .borderColor(Color.Gray)
-     WithTheme({ colorMode: ThemeColorMode.LIGHT }) {
-       Column() {
-         Text('WithTheme')
-           .fontSize(40)
-           .fontWeight(FontWeight.Bold)
-         Text('DARK')
-           .fontSize(40)
-           .fontWeight(FontWeight.Bold)
-       }
-       .justifyContent(FlexAlign.Center)
-       .width('100%')
-       .height('33%')
-       .backgroundColor($r('sys.color.background_primary'))
-     }
+
    }
    .mode(NavigationMode.Auto)
    .titleMode(NavigationTitleMode.Mini)
@@ -149,6 +131,6 @@ struct HomePage {
      {
        value: "Setting"
      }
-   ])
+   ]).backgroundColor($r("app.color.background_primary"))
  }
 }

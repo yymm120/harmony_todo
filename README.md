@@ -14,7 +14,7 @@ video tutorial in bilibili [link](https://)
 
 ### TODO
 
-- [ ] Home Page Design. [figma](https://)
+- [ ] Home Page Design. [design_file](./doc/img/version1.homepage.svg)
 - [ ] Home Page UI implement. [ets/HomePage](./entry/src/main/ets/pages/HomePage.ets)
 
 

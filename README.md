@@ -5,7 +5,7 @@
 <a><img alt="GitHub watchers" src="https://img.shields.io/github/watchers/yymm120/harmony_todo?style=for-the-badge"></a>
 <a><img alt="GitHub License" src="https://img.shields.io/github/license/yymm120/harmony_todo?style=for-the-badge"></a>
 <a><img alt="idea" src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white"></a>
-<a><img alt="figma" src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" ></a>
+
 
 ### Introduction
 

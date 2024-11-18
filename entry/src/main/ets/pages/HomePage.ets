@@ -1,3 +1,8 @@
+import { Theme, ThemeControl } from '@kit.ArkUI'
+import { gAppTheme } from '../theme/dark'
+
+ThemeControl.setDefaultTheme(gAppTheme)
+
 class A {
   text: string = ''
   num: number = 0
@@ -30,6 +35,14 @@ const data: ItemCardProps[] = [
 @Component
 struct HomePage {
   @State TooTmp: ToolbarItem = {'value': "func", 'icon': "./image/ic_public_highlights.svg", 'action': ()=> {}}
+
+  @State menuItemColor: ResourceColor = $r('sys.color.background_primary')
+
+  onWillApplyTheme(theme: Theme) {
+    console.log(`sys : ${$r("sys.color.background_primary").toString()}`);
+    this.menuItemColor = theme.colors.backgroundPrimary;
+    console.log(`custom: ${this.menuItemColor.toString()}`)
+  }
 
   @Builder MenuForHeader() {
     Row({ space: 12 }) {
